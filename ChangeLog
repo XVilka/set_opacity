@@ -1,0 +1,19 @@
+2006-02-09  XVilka Haos of System  <xvilka@gmail.com>
+	* set_opacity.c: (main):
+	Added option for selecting all windows
+	* interface.c:
+	Added function for selecting all windows
+	* stack.c:
+	Added STACK structure for easer windows id
+	manipulating. 
+	
+	Many bugfixes. 
+
+2005-09-17  XVilka Haos of System  <xvilka@gmail.com>
+	* set_opacity.c: (main):
+	Added support for long options
+	Added verbose output
+	* interface.c:
+	Added select window by PID
+	Added select window by name
+	
