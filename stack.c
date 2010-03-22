@@ -2,8 +2,8 @@
                           stack.c  -  description
                              -------------------
     begin                : Wed Feb  9 14:03:54 EST 2006
-    copyright            : (C) 2006 by XVilka
-    email                : xvilka@users.sourceforge.net
+    copyright            : (C) 2006-2010 by XVilka
+    email                : xvilka@gmail.com
  ***************************************************************************/
 
 /***************************************************************************
@@ -14,15 +14,15 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
- 
+
 #include <stdlib.h>
 #include "stack.h"
 
 typedef struct STACKnode* link;
-struct STACKnode 
-{ 
-	Item item; 
-	link next; 
+struct STACKnode
+{
+	Item item;
+	link next;
 };
 
 static link head;

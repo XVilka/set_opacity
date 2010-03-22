@@ -2,8 +2,8 @@
                           interface.h  -  description
                              -------------------
     begin                : Wed Aug  17 14:03:54 EST 2005
-    copyright            : (C) 2005 by XVilka
-    email                : xvilka@users.sourceforge.net
+    copyright            : (C) 2005-2010 by XVilka
+    email                : xvilka@gmail.com
  ***************************************************************************/
 
 /***************************************************************************
@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#define ENV_SIZE 8192 
+#define ENV_SIZE 8192
 #define OPAQUE	0xffffffff
 #define OPACITY "_NET_WM_WINDOW_OPACITY"
 

@@ -1,9 +1,9 @@
 /***************************************************************************
-                          transSet.c  -  description
+                          set_opacity.c  -  description
                              -------------------
     begin                : Wed Aug  17 14:03:54 EST 2005
-    copyright            : (C) 2005 by XVilka
-    email                : xvilka@users.sourceforge.net
+    copyright            : (C) 2005-2010 by XVilka
+    email                : xvilka@gmail.com
  ***************************************************************************/
 
 /***************************************************************************
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
   };
   	int verbose = 0;
   	program_name = argv[0];
-  
+
   	double vopacity;
   	unsigned int opacity;
   	char *display_name = NULL;
@@ -124,17 +124,17 @@ int main(int argc, char *argv[])
   	}
   	while (next_option != -1);
   	if (verbose) SetDebug(1);
-  	
+
   	Display *dpy = Open_Display (display_name);
   	unsigned screen = DefaultScreen(dpy);
-  	
+
   	if (opacity)
   	{
   			opacity = (unsigned int) (vopacity * OPAQUE);
   	}
   	else
   	{
-  			XGetWindowProperty(dpy, target_win, XInternAtom(dpy, OPACITY, False), 
+  			XGetWindowProperty(dpy, target_win, XInternAtom(dpy, OPACITY, False),
   						0L, 1L, False, XA_CARDINAL, &actual, &format, &n, &left, (unsigned char **) &data);
   			if (data != NULL)
   			{
@@ -147,7 +147,7 @@ int main(int argc, char *argv[])
   			else opacity = 0xc0000000;
   	}
   	if (verbose) fprintf(stdout, "opacity 0x%x\n", opacity);
-	if (!all) 
+	if (!all)
 	{
 		if (use_mouse)
 		{
@@ -176,8 +176,8 @@ int main(int argc, char *argv[])
 		}
 		if ((opacity == OPAQUE)&&(target_win != 0))
 			XDeleteProperty (dpy, target_win, XInternAtom(dpy, OPACITY, False));
-		else 
-			if (target_win != 0) XChangeProperty(dpy, target_win, XInternAtom(dpy, OPACITY, False), 
+		else
+			if (target_win != 0) XChangeProperty(dpy, target_win, XInternAtom(dpy, OPACITY, False),
 				XA_CARDINAL, 32, PropModeReplace, (unsigned char *) &opacity, 1L);
     	}
 	if (all)
@@ -188,7 +188,7 @@ int main(int argc, char *argv[])
 		 if (opacity == OPAQUE)
 			 XDeleteProperty (dpy, STACKpop(), XInternAtom(dpy, OPACITY, False));
 		 else
-			 XChangeProperty(dpy, STACKpop(), XInternAtom(dpy, OPACITY, False), 
+			 XChangeProperty(dpy, STACKpop(), XInternAtom(dpy, OPACITY, False),
 				 XA_CARDINAL, 32, PropModeReplace, (unsigned char *) &opacity, 1L);
 	  }
 	}
